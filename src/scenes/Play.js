@@ -18,6 +18,9 @@ class Play extends Phaser.Scene{
         this.star = this;
         this.arrowG = this.add.group();
         this.add.sprite(100,config.height/2+200,'cupid').setScale(3);
+
+        this.titleText = this.add.bitmapText(config.width/2, config.height/2-100, 'gem_font', 'Will you be my Valentines this year? \n       (And every year after)', 40).setOrigin(0.5);
+
         this.you = this.physics.add.sprite(config.width-100,config.height/2+200,'you').setScale(4);
         this.you.body.setImmovable();
         this.yes = this.add.sprite(config.width/2-100,config.height/2,'yes').setScale(5);
