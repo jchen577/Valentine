@@ -7,6 +7,7 @@ class NoTwo extends Phaser.Scene{
     }
 
     create(){
+        this.font = 40;
         this.titleText = this.add.bitmapText(config.width/2, config.height/2, 'gem_font', 'Please? Im begging you!', 40).setOrigin(0.5);
         this.yes = this.add.sprite(config.width/2-100,config.height/2+200,'yes').setScale(5);
         this.yes.setInteractive({
@@ -21,7 +22,9 @@ class NoTwo extends Phaser.Scene{
             this.scene.start('yesScene');
         })
         this.no.on('pointerdown', ()=>{
-            this.scene.start('noScene');
+            this.font+=10;
+            this.titleText.text = "PLEASE!"
+            this.titleText.setFontSize(this.font);
         })
     }
 }
